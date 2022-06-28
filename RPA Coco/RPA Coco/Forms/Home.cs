@@ -62,8 +62,8 @@ namespace RPA_Coco.Forms
             pgb.Maximum = 1000;
             pgb.Step = 1;
             pgb.Value = 0;
-            PrintProcessMessage("Starting RPA process", 1);
-            PrintProcessMessage("Getting variables from database", 1);
+            PrintProcessMessage("Iniciando proceso", 1);
+            PrintProcessMessage("Obteniendo variables desde la base de datos", 1);
             bgwVariables.RunWorkerAsync();
         }
 
@@ -161,8 +161,8 @@ namespace RPA_Coco.Forms
             pgb.Maximum = 1000;
             pgb.Step = 1;
             pgb.Value = 0;
-            PrintProcessMessage("Starting RPA process", 1);
-            PrintProcessMessage("Getting variables from database", 1);
+            PrintProcessMessage("Iniciando proceso", 1);
+            PrintProcessMessage("Obteniendo variables desde la base de datos", 1);
             bgwVariables.RunWorkerAsync();
         }
 
@@ -185,8 +185,8 @@ namespace RPA_Coco.Forms
         {
             if (e.Error == null)
             {
-                PrintProcessMessage("Variables obtained from database", 1);
-                PrintProcessMessage("Checking directories files", 1);
+                PrintProcessMessage("Variables obtenidas correctamente", 1);
+                PrintProcessMessage("Comprobando directorios de los archivos", 1);
                 bgwDirectories.ReportProgress(Progress);
                 bgwDirectories.RunWorkerAsync();
             }
@@ -220,10 +220,10 @@ namespace RPA_Coco.Forms
                 }
                 else
                 {
-                    PrintProcessMessage($"Directories checked successfully", 1);
+                    PrintProcessMessage($"Directorios comprobados", 1);
                     Progress += 70;
                     bgwCopyFile.ReportProgress(Progress);
-                    PrintProcessMessage("Copying COCO Open Attestations File to Workflow Folder", 1);
+                    PrintProcessMessage("Copiando Template a la carpeta de Workflow", 1);
                     Progress += 70;
                     bgwCopyFile.ReportProgress(Progress);
                     bgwCopyFile.RunWorkerAsync();
@@ -258,8 +258,8 @@ namespace RPA_Coco.Forms
                 }
                 else
                 {
-                    PrintProcessMessage($"Copying File successfully", 1);
-                    PrintProcessMessage("Opening Coco Report File and COCO Open Attestations Copy. ", 1);
+                    PrintProcessMessage($"Copiado y pegado del template completado", 1);
+                    PrintProcessMessage("Abriendo Template y Reporte ", 1);
                     Progress += 70;
                     bgwCocoReport.ReportProgress(Progress);
                     bgwCocoReport.RunWorkerAsync();
@@ -289,8 +289,8 @@ namespace RPA_Coco.Forms
         {
             if (e.Error == null)
             {
-                PrintProcessMessage("COCO Report File and COCO Open Attestations opened successfully", 1);
-                PrintProcessMessage("Applying the filters to Coco Report File.", 1);
+                PrintProcessMessage("Los archivos han sido abiertos sin problemas", 1);
+                PrintProcessMessage("Aplicando los filtros correspondientes al reporte", 1);
                 Progress += 70;
                 bgwTemplate.ReportProgress(Progress);
                 bgwTemplate.RunWorkerAsync();
@@ -318,8 +318,8 @@ namespace RPA_Coco.Forms
         {
             if (e.Error == null)
             {
-                PrintProcessMessage("Filters applied successfully.", 1);
-                PrintProcessMessage("Copying the filtered Data.", 1);
+                PrintProcessMessage("Filtros aplicados correctamente", 1);
+                PrintProcessMessage("Copiando data filtrada.", 1);
                 bgwCopyCocoReport.ReportProgress(Progress);
                 bgwCopyCocoReport.RunWorkerAsync();
             }
@@ -340,8 +340,8 @@ namespace RPA_Coco.Forms
         {
             if (e.Error == null)
             {
-                PrintProcessMessage("Copying Data was successfully.", 1);
-                PrintProcessMessage("Pasting the data to COCO Open Attestations Copy.", 1);
+                PrintProcessMessage("La copia ha sido realizado", 1);
+                PrintProcessMessage("Pegando la data en el archivo del template.", 1);
                 bgwPasteDataTemplate.ReportProgress(Progress);
                 bgwPasteDataTemplate.RunWorkerAsync();
             }
@@ -368,9 +368,9 @@ namespace RPA_Coco.Forms
         {
             if (e.Error == null)
             {
-                PrintProcessMessage("Pasting the data was successfully.", 1);
-                PrintProcessMessage("Working on Coco COCO Open Attestations Copy File.", 1);
-                PrintProcessMessage("Transforming the Data and generating the Pivot Table.", 1);
+                PrintProcessMessage("El pegado ha sido completado", 1);
+                PrintProcessMessage("Trabajando en el Template", 1);
+                PrintProcessMessage("Transformando la data y generando la Pivot Table", 1);
                 bgwWorkTemplate.ReportProgress(Progress);
                 bgwWorkTemplate.RunWorkerAsync();
             }
@@ -397,8 +397,8 @@ namespace RPA_Coco.Forms
         {
             if (e.Error == null)
             {
-                PrintProcessMessage("Working on Template was successfully.", 1);
-                PrintProcessMessage("Creating and sending email to the Distros.", 1);
+                PrintProcessMessage("Se completó el trabajo en el template", 1);
+                PrintProcessMessage("Generando EMAIL", 1);
                 bgwEmail.ReportProgress(Progress);
                 bgwEmail.RunWorkerAsync();
             }
