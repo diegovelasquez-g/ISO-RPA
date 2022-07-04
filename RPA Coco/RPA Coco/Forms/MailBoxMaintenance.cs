@@ -28,16 +28,16 @@ namespace RPA_Coco.Forms
         {
             List<Variables> LstVariables = maintenance.GetVariables();
 
-            var VCoco_Report_Path = LstVariables.FirstOrDefault(x => x.VariableName == "Coco_Report_Path");
+            var VCoco_Report_Path = LstVariables.FirstOrDefault(x => x.VariableName == "Template_Folder");
             txtReportPath.Text = VCoco_Report_Path.Value;
 
-            var VCoco_Report_Name = LstVariables.FirstOrDefault(x => x.VariableName == "Coco_Report_Name");
+            var VCoco_Report_Name = LstVariables.FirstOrDefault(x => x.VariableName == "Report_Name");
             txtReportName.Text = VCoco_Report_Name.Value;
 
-            var VCoco_Template_Path = LstVariables.FirstOrDefault(x => x.VariableName == "Coco_Template_Path");
+            var VCoco_Template_Path = LstVariables.FirstOrDefault(x => x.VariableName == "Template_Folder");
             txtTemplate.Text = VCoco_Template_Path.Value;
 
-            var VCoco_Template_Name = LstVariables.FirstOrDefault(x => x.VariableName == "Coco_Template_Name");
+            var VCoco_Template_Name = LstVariables.FirstOrDefault(x => x.VariableName == "Template_Name");
             txtTemplateName.Text = VCoco_Template_Name.Value;
 
             var VEmail_Subject = LstVariables.FirstOrDefault(x => x.VariableName == "Email_Subject");

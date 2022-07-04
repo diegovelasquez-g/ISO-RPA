@@ -54,23 +54,23 @@ namespace RPA_Coco.RPA_Process
                 List<Variables> LstVariables = new List<Variables>();
                 LstVariables = db.Variables.Where(x => x.UserVariable == true).ToList();
 
-                var VCoco_Report_Name = LstVariables.FirstOrDefault(x => x.VariableName == "Coco_Report_Name");
+                var VCoco_Report_Name = LstVariables.FirstOrDefault(x => x.VariableName == "Report_Name");
                 VCoco_Report_Name.Value = model.Coco_Report_Name;
                 VCoco_Report_Name.ModifiedBy = UserName;
                 VCoco_Report_Name.ModifiedDate = ModifedDate;
 
-                var VCoco_Report_Path = LstVariables.FirstOrDefault(x => x.VariableName == "Coco_Report_Path");
+                var VCoco_Report_Path = LstVariables.FirstOrDefault(x => x.VariableName == "Template_Folder");
                 VCoco_Report_Path.Value = model.Coco_Report_Path;
                 VCoco_Report_Path.ModifiedBy = UserName;
                 VCoco_Report_Path.ModifiedDate = ModifedDate;
 
-                var VCoco_Template_Name = LstVariables.FirstOrDefault(x => x.VariableName == "Coco_Template_Name");
+                var VCoco_Template_Name = LstVariables.FirstOrDefault(x => x.VariableName == "Template_Name");
                 VCoco_Template_Name.Value = model.Coco_Template_Name;
                 VCoco_Template_Name.ModifiedBy = UserName;
                 VCoco_Template_Name.ModifiedDate = ModifedDate;
 
 
-                var VCoco_Template_Path = LstVariables.FirstOrDefault(x => x.VariableName == "Coco_Template_Path");
+                var VCoco_Template_Path = LstVariables.FirstOrDefault(x => x.VariableName == "Template_Folder");
                 VCoco_Template_Path.Value = model.Coco_Template_Path;
                 VCoco_Template_Path.ModifiedBy = UserName;
                 VCoco_Template_Path.ModifiedDate = ModifedDate;
