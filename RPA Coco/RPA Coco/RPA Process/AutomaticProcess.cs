@@ -406,9 +406,9 @@ namespace RPA_Coco.RPA_Process
                 oMailItem.BodyFormat = Outlook.OlBodyFormat.olFormatRichText;
                 byte[] myNewRtfBytes = Encoding.UTF8.GetBytes(myNewText);
                 oMailItem.Display();
-                oMailItem.To = "velasquez.alejandrod@gmail.com";
-                oMailItem.Subject = "Reporte";
-                //oMailItem.CC = LstVariables.FirstOrDefault(x => x.VariableName == "Email_CC").Value;
+                oMailItem.To = LstVariables.FirstOrDefault(x => x.VariableName == "Email_To").Value;
+                oMailItem.Subject = LstVariables.FirstOrDefault(x => x.VariableName == "Email_Subject").Value;
+                oMailItem.CC = LstVariables.FirstOrDefault(x => x.VariableName == "Email_CC").Value;
                 oMailItem.RTFBody = myNewRtfBytes;
                 CloseExcels();
                 string fileCopy = Coco_Template_Path;
